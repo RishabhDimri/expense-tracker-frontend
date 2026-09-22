@@ -1,0 +1,1106 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+/* =========================================================
+   FINANCE DASHBOARD THEME
+   Light  = Warm editorial green
+   Dark   = Neutral charcoal + emerald accents
+   ========================================================= */
+
+@theme {
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-secondary: var(--secondary);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+
+  --font-sans: 'Space Grotesk', system-ui, sans-serif;
+  --font-mono: 'DM Mono', monospace;
+
+  --radius-xxl: 14px;
+}
+
+/* =========================================================
+   BASE
+   ========================================================= */
+
+@layer base {
+
+  /* =======================================================
+     LIGHT MODE
+     ======================================================= */
+
+  :root {
+    --background: #eef0e5;
+    --foreground: #1b2a21;
+
+    --primary: #355f45;
+    --primary-foreground: #f7f5e8;
+
+    --secondary: #e2e5d7;
+
+    --card: #f7f5e8;
+    --card-foreground: #1b2a21;
+
+    --muted: #707a70;
+
+    --border: #3c5142;
+
+    --accent: #a4864b;
+
+    --success: #3d7650;
+    --danger: #a6534c;
+    --warning: #a4864b;
+
+    --retro-dark: #1b2a21;
+    --retro-green: #355f45;
+    --retro-light: #e2e5d7;
+    --retro-paper: #f7f5e8;
+    --retro-yellow: #b99b5b;
+
+    --shadow-chunky:
+      3px 3px 0 rgba(27, 42, 33, 0.13);
+
+    --shadow-heavy:
+      5px 5px 0 rgba(27, 42, 33, 0.15);
+
+    --shadow-soft:
+      2px 2px 0 rgba(27, 42, 33, 0.08);
+
+    --bg-pattern:
+      rgba(53, 95, 69, 0.025);
+  }
+
+
+  /* =======================================================
+     SYSTEM DARK
+     ======================================================= */
+
+  @media (prefers-color-scheme: dark) {
+    :root:not(.light) {
+
+      /* Neutral charcoal background */
+      --background: #0f1110;
+
+      /* Soft off-white */
+      --foreground: #f2f3f1;
+
+      /* Emerald accent only */
+      --primary: #5fa875;
+
+      --primary-foreground: #08100b;
+
+      /* Neutral dark control surface */
+      --secondary: #1c1f1d;
+
+      /* Neutral charcoal card */
+      --card: #171918;
+
+      --card-foreground: #f2f3f1;
+
+      /* Neutral gray */
+      --muted: #969d98;
+
+      /* Neutral gray-green border */
+      --border: #353a36;
+
+      /* Warm gold accent */
+      --accent: #c3a866;
+
+      --success: #61b879;
+
+      --danger: #df7169;
+
+      --warning: #c7a85f;
+
+      /* Retro */
+      --retro-dark: #f2f3f1;
+      --retro-green: #5fa875;
+      --retro-light: #1c1f1d;
+      --retro-paper: #171918;
+      --retro-yellow: #c3a866;
+
+      /* Shadows */
+      --shadow-chunky:
+        3px 3px 0 rgba(0, 0, 0, 0.48);
+
+      --shadow-heavy:
+        5px 5px 0 rgba(0, 0, 0, 0.58);
+
+      --shadow-soft:
+        2px 2px 0 rgba(0, 0, 0, 0.35);
+
+      /* Almost invisible neutral texture */
+      --bg-pattern:
+        rgba(255, 255, 255, 0.018);
+    }
+  }
+
+
+  /* =======================================================
+     EXPLICIT DARK MODE
+     ======================================================= */
+
+  .dark {
+
+    /* =====================================================
+       BACKGROUND
+       ===================================================== */
+
+    --background: #0f1110;
+
+    --foreground: #f2f3f1;
+
+
+    /* =====================================================
+       PRIMARY
+       ===================================================== */
+
+    --primary: #5fa875;
+
+    --primary-foreground: #08100b;
+
+
+    /* =====================================================
+       SURFACES
+
+       These are deliberately NEUTRAL.
+       No strong green tint.
+       ===================================================== */
+
+    --secondary: #1c1f1d;
+
+    --card: #171918;
+
+    --card-foreground: #f2f3f1;
+
+
+    /* =====================================================
+       TEXT
+       ===================================================== */
+
+    --muted: #969d98;
+
+
+    /* =====================================================
+       BORDER
+       ===================================================== */
+
+    --border: #353a36;
+
+
+    /* =====================================================
+       ACCENTS
+       ===================================================== */
+
+    --accent: #c3a866;
+
+
+    /* =====================================================
+       FINANCIAL
+       ===================================================== */
+
+    --success: #61b879;
+
+    --danger: #df7169;
+
+    --warning: #c7a85f;
+
+
+    /* =====================================================
+       RETRO
+       ===================================================== */
+
+    --retro-dark: #f2f3f1;
+
+    --retro-green: #5fa875;
+
+    --retro-light: #1c1f1d;
+
+    --retro-paper: #171918;
+
+    --retro-yellow: #c3a866;
+
+
+    /* =====================================================
+       SHADOWS
+       ===================================================== */
+
+    --shadow-chunky:
+      3px 3px 0 rgba(0, 0, 0, 0.48);
+
+    --shadow-heavy:
+      5px 5px 0 rgba(0, 0, 0, 0.58);
+
+    --shadow-soft:
+      2px 2px 0 rgba(0, 0, 0, 0.35);
+
+
+    /* =====================================================
+       SUBTLE NEUTRAL GRID
+       ===================================================== */
+
+    --bg-pattern:
+      rgba(255, 255, 255, 0.018);
+  }
+
+
+  /* =======================================================
+     EXPLICIT LIGHT MODE
+     ======================================================= */
+
+  .light {
+    --background: #eef0e5;
+    --foreground: #1b2a21;
+
+    --primary: #355f45;
+    --primary-foreground: #f7f5e8;
+
+    --secondary: #e2e5d7;
+
+    --card: #f7f5e8;
+    --card-foreground: #1b2a21;
+
+    --muted: #707a70;
+
+    --border: #3c5142;
+
+    --accent: #a4864b;
+
+    --success: #3d7650;
+    --danger: #a6534c;
+    --warning: #a4864b;
+
+    --retro-dark: #1b2a21;
+    --retro-green: #355f45;
+    --retro-light: #e2e5d7;
+    --retro-paper: #f7f5e8;
+    --retro-yellow: #b99b5b;
+
+    --shadow-chunky:
+      3px 3px 0 rgba(27, 42, 33, 0.13);
+
+    --shadow-heavy:
+      5px 5px 0 rgba(27, 42, 33, 0.15);
+
+    --shadow-soft:
+      2px 2px 0 rgba(27, 42, 33, 0.08);
+
+    --bg-pattern:
+      rgba(53, 95, 69, 0.025);
+  }
+
+
+  /* =======================================================
+     GLOBAL
+     ======================================================= */
+
+  *,
+  *::before,
+  *::after {
+    @apply border-border;
+  }
+
+
+  html {
+    background: var(--background);
+    color-scheme: light;
+  }
+
+
+  html.dark {
+    color-scheme: dark;
+  }
+
+
+  body {
+    @apply min-h-screen font-sans text-foreground;
+
+    margin: 0;
+
+    background-color: var(--background);
+
+    background-image:
+      linear-gradient(
+        var(--bg-pattern) 1px,
+        transparent 1px
+      ),
+      linear-gradient(
+        90deg,
+        var(--bg-pattern) 1px,
+        transparent 1px
+      );
+
+    background-size: 32px 32px;
+
+    transition:
+      background-color 250ms ease,
+      color 250ms ease;
+  }
+
+
+  button,
+  input,
+  select,
+  textarea {
+    font: inherit;
+  }
+
+
+  ::selection {
+    background: var(--primary);
+    color: var(--primary-foreground);
+  }
+
+
+  /* =======================================================
+     DARK FORM CONTROLS
+     ======================================================= */
+
+  .dark input,
+  .dark select,
+  .dark textarea {
+    color-scheme: dark;
+  }
+
+
+  .dark select option {
+    background: #171918;
+    color: #f2f3f1;
+  }
+
+
+  .dark input::placeholder,
+  .dark textarea::placeholder {
+    color: #656b67;
+  }
+
+
+  /* =======================================================
+     SCROLLBAR
+     ======================================================= */
+
+  ::-webkit-scrollbar {
+    width: 9px;
+    height: 9px;
+  }
+
+
+  ::-webkit-scrollbar-track {
+    background: var(--secondary);
+  }
+
+
+  ::-webkit-scrollbar-thumb {
+    background: #5b635d;
+
+    border: 2px solid var(--secondary);
+
+    border-radius: 999px;
+  }
+
+
+  .dark ::-webkit-scrollbar-thumb {
+    background: #4b514d;
+
+    border-color: #1c1f1d;
+  }
+
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--primary);
+  }
+}
+
+
+/* =========================================================
+   RETRO SURFACE
+   ========================================================= */
+
+@utility glass {
+
+  background: var(--card);
+
+  border: 2px solid var(--border);
+
+  box-shadow: var(--shadow-chunky);
+
+  backdrop-filter: none;
+
+  -webkit-backdrop-filter: none;
+}
+
+
+/* =========================================================
+   CARD
+   ========================================================= */
+
+@utility glass-card {
+
+  @apply rounded-xl transition-all duration-200;
+
+  background: var(--card);
+
+  border: 2px solid var(--border);
+
+  box-shadow: var(--shadow-chunky);
+
+  &:hover {
+    transform: translate(-1px, -1px);
+
+    box-shadow: var(--shadow-heavy);
+  }
+
+  &:active {
+    transform: translate(0, 0);
+
+    box-shadow: var(--shadow-soft);
+  }
+}
+
+
+/* =========================================================
+   PRIMARY BUTTON
+   ========================================================= */
+
+@utility btn-primary {
+
+  @apply inline-flex items-center justify-center gap-2;
+
+  @apply px-6 py-3;
+
+  @apply rounded-lg;
+
+  @apply font-bold;
+
+  @apply transition-all duration-150;
+
+  background: var(--primary);
+
+  color: var(--primary-foreground);
+
+  border: 2px solid var(--border);
+
+  box-shadow: var(--shadow-chunky);
+
+  letter-spacing: -0.01em;
+
+
+  &:hover {
+    transform: translate(-1px, -1px);
+
+    box-shadow: var(--shadow-heavy);
+
+    filter: brightness(1.07);
+  }
+
+
+  &:active {
+    transform: translate(2px, 2px);
+
+    box-shadow: none;
+
+    filter: brightness(0.97);
+  }
+
+
+  &:disabled {
+    transform: none;
+
+    box-shadow: var(--shadow-soft);
+
+    filter: none;
+  }
+}
+
+
+/* =========================================================
+   OUTLINE BUTTON
+   ========================================================= */
+
+@utility btn-outline {
+
+  @apply inline-flex items-center justify-center gap-2;
+
+  @apply px-6 py-3;
+
+  @apply rounded-lg;
+
+  @apply font-bold;
+
+  @apply transition-all duration-150;
+
+  background: var(--card);
+
+  color: var(--foreground);
+
+  border: 2px solid var(--border);
+
+  box-shadow: var(--shadow-soft);
+
+
+  &:hover {
+    background: var(--secondary);
+
+    transform: translate(-1px, -1px);
+
+    box-shadow: var(--shadow-chunky);
+  }
+
+
+  &:active {
+    transform: translate(2px, 2px);
+
+    box-shadow: none;
+  }
+}
+
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+
+@utility sidebar-item {
+
+  @apply flex items-center gap-3;
+
+  @apply px-4 py-3;
+
+  @apply rounded-lg;
+
+  @apply font-semibold;
+
+  @apply transition-all duration-150;
+
+  color: var(--muted);
+
+  border: 2px solid transparent;
+
+
+  &:hover {
+    color: var(--foreground);
+
+    background: var(--secondary);
+
+    border-color: var(--border);
+  }
+}
+
+
+/* =========================================================
+   DARK SIDEBAR
+   ========================================================= */
+
+.dark .sidebar-item {
+  color: #929994;
+}
+
+
+.dark .sidebar-item:hover {
+  color: #f2f3f1;
+
+  background: #1c1f1d;
+
+  border-color: #353a36;
+}
+
+
+/* =========================================================
+   CARD HOVER
+   ========================================================= */
+
+@utility card-hover {
+
+  @apply transition-all duration-150;
+
+
+  &:hover {
+    transform: translate(-1px, -1px);
+
+    box-shadow: var(--shadow-heavy);
+  }
+}
+
+
+/* =========================================================
+   TEXT
+   ========================================================= */
+
+@utility text-gradient {
+  color: var(--primary);
+}
+
+
+/* =========================================================
+   MONEY / NUMBERS
+   ========================================================= */
+
+@utility financial-number {
+
+  font-family: var(--font-mono);
+
+  font-variant-numeric: tabular-nums;
+
+  letter-spacing: -0.04em;
+}
+
+
+/* =========================================================
+   RETRO INPUT
+   ========================================================= */
+
+@utility input-editorial {
+
+  @apply w-full;
+
+  @apply px-4 py-3;
+
+  @apply rounded-lg;
+
+  @apply outline-none;
+
+  @apply transition-all duration-150;
+
+  background: var(--card);
+
+  color: var(--foreground);
+
+  border: 2px solid var(--border);
+
+  box-shadow: var(--shadow-soft);
+
+
+  &::placeholder {
+    color: var(--muted);
+  }
+
+
+  &:focus {
+    border-color: var(--primary);
+
+    box-shadow:
+      3px 3px 0 var(--primary);
+  }
+}
+
+
+/* =========================================================
+   DARK INPUT
+   ========================================================= */
+
+.dark .input-editorial {
+  background: #171918;
+
+  color: #f2f3f1;
+
+  border-color: #353a36;
+}
+
+
+.dark .input-editorial:hover {
+  border-color: #4a504c;
+}
+
+
+.dark .input-editorial:focus {
+  background: #1a1d1b;
+
+  border-color: #5fa875;
+
+  box-shadow:
+    0 0 0 3px rgba(95, 168, 117, 0.10),
+    3px 3px 0 rgba(95, 168, 117, 0.55);
+}
+
+
+/* =========================================================
+   STATUS
+   ========================================================= */
+
+@utility text-success {
+  color: var(--success);
+}
+
+
+@utility text-danger {
+  color: var(--danger);
+}
+
+
+@utility text-warning {
+  color: var(--warning);
+}
+
+
+/* =========================================================
+   RETRO LABEL
+   ========================================================= */
+
+@utility retro-label {
+
+  @apply inline-flex items-center;
+
+  @apply px-2.5 py-1;
+
+  @apply rounded-md;
+
+  @apply text-[10px];
+
+  @apply font-bold;
+
+  @apply uppercase;
+
+  @apply tracking-[0.12em];
+
+  background: var(--secondary);
+
+  color: var(--muted);
+
+  border: 1px solid var(--border);
+}
+
+
+/* =========================================================
+   RETRO DIVIDER
+   ========================================================= */
+
+@utility retro-divider {
+  border-top: 2px solid var(--border);
+}
+
+
+/* =========================================================
+   BACKGROUND
+   ========================================================= */
+
+@utility bg-mesh {
+
+  background-color: var(--background);
+
+  background-image:
+    linear-gradient(
+      var(--bg-pattern) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      var(--bg-pattern) 1px,
+      transparent 1px
+    );
+
+  background-size: 32px 32px;
+}
+
+
+/* =========================================================
+   NO SCROLLBAR
+   ========================================================= */
+
+@utility no-scrollbar {
+
+  -ms-overflow-style: none;
+
+  scrollbar-width: none;
+
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+
+/* =========================================================
+   DARK MODE SURFACE OVERRIDES
+   ========================================================= */
+
+/*
+ * These are intentionally neutral.
+ * This prevents Tailwind utility classes from
+ * accidentally making the entire interface green.
+ */
+
+.dark .bg-card {
+  background-color: #171918;
+}
+
+
+.dark .bg-secondary {
+  background-color: #1c1f1d;
+}
+
+
+.dark .glass-card {
+  background-color: #171918;
+
+  border-color: #353a36;
+}
+
+
+.dark .glass {
+  background-color: #171918;
+
+  border-color: #353a36;
+}
+
+
+/* =========================================================
+   DARK TABLE
+   ========================================================= */
+
+.dark table {
+  color: #f2f3f1;
+}
+
+
+.dark thead tr {
+  background: #1a1c1b;
+}
+
+
+.dark tbody tr:hover {
+  background: rgba(255, 255, 255, 0.025);
+}
+
+
+/* =========================================================
+   DARK PRIMARY TINTS
+   ========================================================= */
+
+.dark .bg-primary\/5 {
+  background-color: rgba(95, 168, 117, 0.045);
+}
+
+
+.dark .bg-primary\/10 {
+  background-color: rgba(95, 168, 117, 0.08);
+}
+
+
+.dark .border-primary\/15 {
+  border-color: rgba(95, 168, 117, 0.16);
+}
+
+
+.dark .border-primary\/20 {
+  border-color: rgba(95, 168, 117, 0.20);
+}
+
+
+/* =========================================================
+   DARK DANGER
+   ========================================================= */
+
+.dark .bg-rose-500\/5 {
+  background-color: rgba(223, 113, 105, 0.055);
+}
+
+
+.dark .bg-rose-500\/10 {
+  background-color: rgba(223, 113, 105, 0.09);
+}
+
+
+.dark .border-rose-500\/20 {
+  border-color: rgba(223, 113, 105, 0.20);
+}
+
+
+/* =========================================================
+   DARK AMBER
+   ========================================================= */
+
+.dark .text-amber-600,
+.dark .text-amber-400 {
+  color: #d3b46c;
+}
+
+
+/* =========================================================
+   DARK GREEN TEXT
+   ========================================================= */
+
+.dark .text-emerald-500 {
+  color: #62c27d;
+}
+
+
+/* =========================================================
+   GLOBAL SAFETY
+   ========================================================= */
+
+html,
+body,
+#root {
+  width: 100%;
+
+  min-width: 0;
+
+  min-height: 100%;
+}
+
+
+html {
+  overflow-x: hidden;
+}
+
+
+body {
+  overflow-x: hidden;
+}
+
+
+/* =========================================================
+   ROOT
+   ========================================================= */
+
+#root {
+  min-height: 100vh;
+
+  width: 100%;
+}
+
+
+/* =========================================================
+   MEDIA
+   ========================================================= */
+
+img,
+svg,
+video,
+canvas {
+  max-width: 100%;
+}
+
+
+/* =========================================================
+   TEXT WRAPPING
+   ========================================================= */
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+a,
+button,
+label {
+  overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   FORM WIDTH
+   ========================================================= */
+
+input,
+select,
+textarea,
+button {
+  max-width: 100%;
+}
+
+
+/* =========================================================
+   FOCUS
+   ========================================================= */
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--primary);
+
+  outline-offset: 2px;
+}
+
+
+/* =========================================================
+   TOUCH
+   ========================================================= */
+
+@media (max-width: 1023px) {
+  button,
+  a {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 639px) {
+
+  :root {
+    --shadow-chunky:
+      2px 2px 0 rgba(27, 42, 33, 0.12);
+
+    --shadow-heavy:
+      3px 3px 0 rgba(27, 42, 33, 0.14);
+
+    --shadow-soft:
+      1px 1px 0 rgba(27, 42, 33, 0.08);
+  }
+
+
+  .dark {
+    --shadow-chunky:
+      2px 2px 0 rgba(0, 0, 0, 0.48);
+
+    --shadow-heavy:
+      3px 3px 0 rgba(0, 0, 0, 0.58);
+
+    --shadow-soft:
+      1px 1px 0 rgba(0, 0, 0, 0.35);
+  }
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1023px) {
+
+  .app-container {
+    width: 100%;
+
+    max-width: 100%;
+
+    overflow-x: hidden;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+
+    animation-duration: 0.01ms !important;
+
+    animation-iteration-count: 1 !important;
+
+    transition-duration: 0.01ms !important;
+  }
+}
