@@ -1,6 +1,6 @@
 <div align="center">
 
-# expense-tracker-frontend
+# expense-tracker-frontend (Ledgerly)
 
 <p align="center">A modern personal finance dashboard for managing transactions, budgets, categories, and financial insights, featuring a responsive editorial interface with light and dark themes.</p>
 
