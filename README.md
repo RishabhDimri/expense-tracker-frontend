@@ -14,17 +14,6 @@
 
 ---
 
-## 📋 Table of Contents
-
-- [🌐 Demo](#demo)
-- [📸 Screenshots](#screenshots)
-- [🚀 Installation](#installation)
-- [💻 Usage](#usage)
-- [✨ Features](#features)
-- [📄 License](#license)
-- [👤 Contact](#contact)
-- [🙏 Acknowledgements](#acknowledgements)
-
 ## 🌐 Demo
 
 [https://expense-tracker-frontend-1cat.vercel.app/](https://expense-tracker-frontend-1cat.vercel.app/)
